@@ -10,6 +10,8 @@ We have identified specific areas explicitly from *NWH* (North Western Himalayas
 
 The meteorological data set was acquired from ERA5 (Table 1) in a .NetCDF file format where we have 40 years of monthly mean spatio-temporal data from 1979-2018 of  Indian Subcontinent.
 
+[Source](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview)
+
 1. Snowfall (Sf), 
 2. Surface Temperature (t2m), 
 3. Snow Cover Area (SCA), 
