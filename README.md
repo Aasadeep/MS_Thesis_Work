@@ -4,7 +4,7 @@
 
 #### 1. Study Area
 
-We have identified specific areas explicitly from NWH (North Western Himalayas),WH (Western Himalayas) & TH (Tibetan Himalayas) in Western-Central HKH region based on change in trends observed in spatial plots. The equal area square boxes (equal latitude-longitudinal grid) were chosen for further study inside these 3 study area boxes i.e. NWH, WH & TH where some trend change was detected.
+We have identified specific areas explicitly from *NWH* (North Western Himalayas), *WH* (Western Himalayas) & *TH* (Tibetan Himalayas) in Western-Central HKH region based on change in trends observed in spatial plots. The equal area square boxes (equal latitude-longitudinal grid) were chosen for further study inside these 3 study area boxes i.e. NWH, WH & TH where some trend change was detected.
 
 #### 2. Dataset
 
@@ -42,33 +42,21 @@ The programming languages used is MATLAB & R. Essential libraries/functions used
     * _**innovtrend**_ For Innovative Trend Analysis.
 
 #### 4. Procedure
-* Plot the Kendall Tau b of all climatic parameters (Sf, SCA, t2m, sd, sde, sshf, str) over whole spatial area (Indian subcontinent) of the available multi dimensional data for monthly averaged of 40 years temporal scale, and also the correlation plots among these climatic parameters where there is some significant trend/correlations observed. Fitting the Indian Boundary over these heat plots. (Plotting kendall & correlation values for confidence level - 99%, 95% & 90%).
-2. 
-3.
-6. Selecting Parameter & their Areas w.r.t correlations significance for time period 
-    1. Seasonal average of it. DJFM- winter stack, JJAS summer stack. 
-    2. Yearly average of it. Yearly average. 
 
-& doing linear regression of each time period.
+* ERA-5 reanalysis dataset in .grib format from ECMWF website was downloaded and was converted to .netcdf format via CDO tool in bash terminal and was processed in *MATLAB* (via *ncread*).
 
- for all parameters or selective parameters SCA & Snowfall 
+* The Kendall Tau-b ( via *ktaub*) of these climatic parameters (Sf, SCA, t2m, sd, sde, sshf, str) over whole spatial area (Indian subcontinent) of the available multi dimensional data for monthly averaged of 40 years temporal scale was plotted for each pixel (latitude/longitude) as a spatial heat plot, and also the correlation plots among these climatic parameters (SCA with Sf & t2m) and also fitting the Indian Boundary over these heat plots via *.shp* Indian Administrative Boundary in *MATLAB* (via *shaperead* & *mapshow*). (Plotting kendall & correlation values for confidence level - 99%, 95% & 90% and choosinng/selecting appropriate 3 spatial locations (study areas) - *NWH*, *WH* & *TH* based on where there is some significant trend/correlations observed of r/z value greater than atleast 0.5 of equal square grid box, in this case 2.1 x 2.1 was chosen).
 
-1. magnitude wise in trend and 
-2. r values wise for intercorrelations.
+* And then with those study areas of 3 locations i.e. NWH, WH & TH, box average for these climatic variables was estimated followed by converting them into 3 temporal scales i.e. *Annual*, *DJFM* & *JJAS* average for all variables on a yearly basis. They (40 yearly averaged variable magnitude values) were exported as .csv files for further trend analysis via Mann-Kendall Trend Test with Sen's Slope & Innovative Trend Analysis in *R*.
 
-curve fit for
+* *Spearman Correlation* was estimated in *MATLAB* for climatic variables SCA with t2m & Sf for all three temporal scales.
 
-selecting confidence value
+* Regression Analysis was done for all the .csv files exported and correlation plots were also generated.
 
-1. 90% or 95% or 99%. or more than one.
+#### 4. Codes provided in this repository
 
-& doing 3 data analysis  - 
+*
 
-1. Mann Kendall (from paper) + Spearman, Pearson (Regression) + Sen's slope.
-2. ITA
-3. PCA
 
-First , make codes for djfm and annual codes
 
-then take python codes for MK-tests, ITA, PCA etc.
 
